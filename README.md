@@ -1,5 +1,5 @@
-ChrisR3tro's Mint-Y theme
-=====================
+Mint-Y theme amber variation with a classic touch
+=================================================
 
 This adds a variation to Mint-Y in amber color and changes some stuff around for a more classic UI
 
