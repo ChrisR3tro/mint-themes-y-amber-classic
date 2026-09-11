@@ -2603,11 +2603,11 @@ indicatorbin.badge.needs-attention > indicator { background: var(--accent-bg-col
 
 indicatorbin.badge.needs-attention > indicator > label { color: var(--accent-fg-color); }
 
-window.csd { box-shadow: 0 1px 3px 3px transparent, 0 2px 8px 2px RGB(0 0 0/13%), 0 3px 20px 10px RGB(0 0 0/9%), 0 6px 32px 16px RGB(0 0 0/4%), 0 0 0 1px RGB(0 0 0 / 80%); margin: 0px; border-radius: var(--window-radius); outline: 1px solid RGB(255 255 255/30%); outline-offset: -1px; }
+window.csd { box-shadow: 0 0 0 1px RGB(0 0 0 / 80%); margin: 0px; border-radius: var(--window-radius); outline: 1px solid RGB(255 255 255/30%); outline-offset: -1px; }
 
-window.csd:backdrop { box-shadow: 0 1px 3px 3px RGB(0 0 0/9%), 0 2px 14px 5px RGB(0 0 0/5%), 0 4px 28px 12px RGB(0 0 0/3%), 0 6px 32px 16px transparent, 0 0 0 1px RGB(0 0 0 / 80%); transition: box-shadow 200ms ease-out; }
+window.csd:backdrop { box-shadow: 0 0 0 1px RGB(0 0 0 / 80%); transition: box-shadow 200ms ease-out; }
 
-window.csd.dialog.message, window.csd.messagedialog { box-shadow: 0 2px 8px 2px RGB(0 0 0/7%), 0 3px 20px 10px RGB(0 0 0/5%), 0 6px 32px 16px RGB(0 0 0/2%), 0 0 0 1px RGB(0 0 0 / 80%); }
+window.csd.dialog.message, window.csd.messagedialog { box-shadow: 0 0 0 1px RGB(0 0 0 / 80%); }
 
 window.csd.tiled, window.csd.tiled-top, window.csd.tiled-left, window.csd.tiled-right, window.csd.tiled-bottom { --window-radius: 0px; outline: none; box-shadow: 0 0 0 1px color-mix(in srgb, currentColor var(--border-opacity), transparent), 0 0 0 20px transparent; }
 

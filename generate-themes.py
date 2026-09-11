@@ -24,83 +24,6 @@ start_dir = os.getcwd()
 
 os.system("mkdir -p usr/share/themes")
 
-# Mint-X ##################################################################
-
-# First build the Gtk4 css
-os.chdir("src/Mint-X/theme/Mint-X/gtk-4.0/")
-os.system("pysassc ./sass/gtk.scss gtk.css")
-os.system("pysassc ./sass/gtk-dark.scss gtk-dark.css")
-os.chdir(start_dir)
-
-# Then the Gtk3 css
-os.chdir("src/Mint-X/theme/Mint-X/gtk-3.0/")
-os.system("pysassc ./sass/gtk.scss gtk.css")
-os.system("pysassc ./sass/gtk-dark.scss gtk-dark.css")
-os.chdir(start_dir)
-
-os.system("cp -R src/Mint-X/theme/* usr/share/themes/")
-
-# Now do the other themes and color variations
-for color in os.listdir("src/Mint-X/variations"):
-    path = os.path.join("src/Mint-X/variations", color)
-    if os.path.isdir(path):
-        theme = "usr/share/themes/Mint-X-%s" % color
-        os.system("cp -R usr/share/themes/Mint-X %s" % theme)
-        os.system("cp -R src/Mint-X/variations/%s/* %s/" % (color, theme))
-
-        # Accent color
-        accent_files = []
-        accent_files.append(os.path.join(theme, "gtk-2.0", "gtkrc"))
-        accent_files.append(os.path.join(theme, "gtk-3.0", "settings.ini"))
-        accent_files.append(os.path.join(theme, "gtk-3.0", "sass", "_colors.scss"))
-        accent_files.append(os.path.join(theme, "gtk-4.0", "sass", "_colors.scss"))
-        accent_files.append(os.path.join(theme, "libadwaita-1.5", "defaults-light.css"))
-        accent_files.append(os.path.join(theme, "libadwaita-1.5", "defaults-dark.css"))
-        accent_files.append(os.path.join(theme, "libadwaita-1.7", "defaults-light.css"))
-        accent_files.append(os.path.join(theme, "libadwaita-1.7", "defaults-dark.css"))
-        for file in accent_files:
-            for accent in X_HEX_ACCENTS:
-                os.system("sed -i s'/%(accent)s/%(color_accent)s/' %(file)s" % {'accent': accent, 'color_accent': x_hex_colors[color], 'file': file})
-
-        # Build sass
-        sass_dir = os.path.join(theme, "gtk-4.0")
-        os.chdir(sass_dir)
-        os.system("pysassc ./sass/gtk.scss gtk.css")
-        os.system("pysassc ./sass/gtk-dark.scss gtk-dark.css")
-        os.system("rm -rf sass parse-sass.sh")
-        os.chdir(start_dir)
-
-        sass_dir = os.path.join(theme, "gtk-3.0")
-        os.chdir(sass_dir)
-        os.system("pysassc ./sass/gtk.scss gtk.css")
-        os.system("pysassc ./sass/gtk-dark.scss gtk-dark.css")
-        os.system("rm -rf sass parse-sass.sh")
-        os.chdir(start_dir)
-
-        # Cinnamon theme name
-        file = os.path.join(theme, "cinnamon", "theme.json")
-        if os.path.exists(file):
-            os.system("sed -i s'/Mint-X/Mint-X-%(color)s/' %(file)s" % {'color': color, 'file': file})
-
-        # Cinnamon colors
-        file = os.path.join(theme, "cinnamon", "cinnamon.css")
-        if os.path.exists(file):
-            for accent in X_HEX_ACCENTS:
-                os.system("sed -i s'/%(accent)s/%(color_accent)s/' %(file)s" % {'accent': accent, 'color_accent': x_hex_colors[color], 'file': file})
-            for accent in X_RGB_ACCENTS:
-                os.system("sed -i s'/%(accent)s/%(color_accent)s/' %(file)s" % {'accent': accent, 'color_accent': x_rgb_colors[color], 'file': file})
-
-        # Openbox colors
-        file = os.path.join(theme, "openbox-3", 'themerc')
-        if os.path.exists(file):
-            for accent in X_HEX_ACCENTS:
-                os.system("sed -i s'/%(accent)s/%(color_accent)s/' %(file)s" % {'accent': accent, 'color_accent': x_hex_colors[color], 'file': file})
-
-
-
-
-os.system("rm -rf usr/share/themes/Mint-X/gtk-3.0/sass usr/share/themes/Mint-X/gtk-3.0/parse-sass.sh")
-os.system("rm -rf usr/share/themes/Mint-X/gtk-4.0/sass usr/share/themes/Mint-X/gtk-4.0/parse-sass.sh")
 
 # Mint-Y #################################################################
 
@@ -112,7 +35,7 @@ os.chdir(curdir)
 
 # Mint-Y color variations
 for color in y_hex_colors1.keys():
-    for variant in ["", "-Dark"]:
+    for variant in ["-Dark"]: # ChrisR3tro: Don't care about non-dark variations
         original_name = "Mint-Y%s" % variant
         path = os.path.join("src/Mint-Y/variations/%s" % color)
         if os.path.isdir(path):

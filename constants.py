@@ -2,6 +2,7 @@
 
 # Mint-X
 X_HEX_ACCENTS = ["#9ab87c", "#accd8a"]
+X_HEX_ACCENTS = [] # ChrisR3tro: Don't care about Mint-X
 
 x_hex_colors = {}
 x_hex_colors["Aqua"] = "#6cabcd"
@@ -14,8 +15,10 @@ x_hex_colors["Purple"] = "#8c6ec9"
 x_hex_colors["Red"] = "#c15b58"
 x_hex_colors["Sand"] = "#c8ac69"
 x_hex_colors["Teal"] = "#5aaa9a"
+x_hex_colors = {} # ChrisR3tro: Don't care about Mint-X
 
 X_RGB_ACCENTS = ["172, 205, 138", "#accd8a"]
+X_RGB_ACCENTS = [] # ChrisR3tro: Don't care about Mint-X
 
 x_rgb_colors = {}
 x_rgb_colors["Aqua"] = "108, 171, 205"
@@ -28,7 +31,7 @@ x_rgb_colors["Purple"] = "140, 110, 201"
 x_rgb_colors["Red"] = "193, 91, 88"
 x_rgb_colors["Sand"] = "200, 172, 105"
 x_rgb_colors["Teal"] = "90, 170, 154"
-
+x_rgb_colors = {} # ChrisR3tro: Don't care about Mint-X
 
 # Mint-Y
 Y_HEX_ACCENT1 = ["#35a854"]  # BASE
@@ -63,3 +66,10 @@ y_hex_colors2["Sand"] = "#c5a07c"
 
 y_hex_colors1["Teal"] = "#199ca8"
 y_hex_colors2["Teal"] = "#199ca8"
+
+# ChrisR3tro: Don't care about other variations
+y_hex_colors1 = {} 
+y_hex_colors2 = {}
+
+y_hex_colors1["Amber"] = "#ffbf00"
+y_hex_colors2["Amber"] = "#ffbf00"

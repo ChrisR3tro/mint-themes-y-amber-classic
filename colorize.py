@@ -14,6 +14,7 @@ HUE["Purple"] = 260
 HUE["Red"] = 2
 HUE["Sand"] = 42
 HUE["Teal"] = 168
+HUE["Amber"] = 40
 
 def rgb_to_hsv(rgb):
     # Translated from source of colorsys.rgb_to_hsv

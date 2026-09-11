@@ -2991,14 +2991,14 @@ colorchooser .popover.osd {
 window {
   border-width: 0px; }
   window.csd {
-    box-shadow: 0 3px 9px 1px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 0 1px #35A854;
     margin: 0;
-    border-radius: 8px 8px 0 0; }
+    border-radius: 0 0 0 0; }
     window.csd:backdrop {
-      box-shadow: 0 3px 9px 1px transparent, 0 2px 6px 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.75); }
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.75); }
     window.csd.popup {
       border-radius: 8px;
-      box-shadow: 0 3px 9px 1px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 0, 0, 0.75); }
+      box-shadow: 0 0 0 1px #35A854; }
     window.csd.dialog.message {
       border-radius: 8px 8px 0 0; }
   window.fullscreen, window.maximized {
@@ -3006,14 +3006,14 @@ window {
     box-shadow: none; }
   window.tiled, window.tiled-top, window.tiled-right, window.tiled-bottom, window.tiled-left {
     border-radius: 0;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.75), 0 0 0 20px transparent; }
+    box-shadow: 0 0 0 1px #35A854, 0 0 0 20px transparent; }
     window.tiled:backdrop, window.tiled-top:backdrop, window.tiled-right:backdrop, window.tiled-bottom:backdrop, window.tiled-left:backdrop {
       box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.75), 0 0 0 20px transparent; }
   window.popup {
     box-shadow: none;
     border-radius: 0; }
   window.ssd {
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.75); }
+    box-shadow: 0 0 0 1px #35A854; }
   window.ssd:backdrop {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.75); }
   window.ssd.maximized, window.ssd.maximized:backdrop {
