@@ -87,12 +87,7 @@ def update_color (color):
     os.system("./render-assets.sh")
     os.chdir(curdir)
 
-if len(sys.argv) < 2:
-    usage()
-else:
-    color_variation = sys.argv[1]
-    if not color_variation in ["Amber", "All"]:
-        usage()
+color_variation = "Amber"
 
 # Mint-Y variations
 curdir = os.getcwd()

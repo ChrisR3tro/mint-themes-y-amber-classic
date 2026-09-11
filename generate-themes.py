@@ -1,15 +1,8 @@
 #!/usr/bin/python3
 import os
 
-from constants import X_HEX_ACCENTS, X_RGB_ACCENTS, x_hex_colors, x_rgb_colors
 from constants import Y_HEX_ACCENT1, Y_HEX_ACCENT2
 from constants import y_hex_colors1, y_hex_colors2
-
-def x_colorize_directory (path, variation):
-    for accent in X_HEX_ACCENTS:
-        os.system("find %s -name '*.*' -type f -exec sed -i 's/%s/%s/gI' {}  \\;" % (path, accent, x_hex_colors[variation]))
-    for accent in X_RGB_ACCENTS:
-        os.system("find %s -name '*.*' -type f -exec sed -i 's/%s/%s/gI' {}  \\;" % (path, accent, x_rgb_colors[variation]))
 
 def y_colorize_directory (path, variation):
     for accent in Y_HEX_ACCENT1:
