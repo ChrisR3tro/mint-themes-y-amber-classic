@@ -10,10 +10,12 @@ This adds a variation to Mint-Y in amber color and changes some stuff around for
 
 Dependencies for building (unchanged from original):
 * optipng
+* pysassc
 
 Building & installing
 =====================
 
-1. run make
-2. put in ~./themes
-3. enjoy
+1. run `./install.sh` (builds the theme if needed and copies it to ~/.themes)
+2. enjoy
+
+Use `./install.sh -b` to force a rebuild, or set `THEMES_DIR` to install somewhere else.
